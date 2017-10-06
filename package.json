@@ -5,10 +5,16 @@
   "author": "Pham Quy Hai",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "flow start": "flow start",
+    "flow stop": "flow stop",
+    "flow status": "flow status",
+    "flow coverage": "flow coverage"
+  },
   "dependencies": {
     "ex-react-native-i18n": "^0.0.3",
     "expo": "^21.0.0",
-    "react": "16.0.0-alpha.12",
+    "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-21.0.2.tar.gz",
     "react-navigation": "^1.0.0-beta.13",
     "react-redux": "^5.0.6",
@@ -20,6 +26,7 @@
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-preset-flow": "^6.23.0",
+    "flow-bin": "0.56.0",
     "prettier-eslint": "^8.2.0"
   }
 }

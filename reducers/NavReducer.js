@@ -3,9 +3,6 @@ import { AppNavigator } from "../navigation/AppNavigator";
 import * as ACTIONTYPES from "../actions/actionTypes";
 
 const firstAction = AppNavigator.router.getActionForPathAndParams("Login");
-// const secondAction = AppNavigator.router.getActionForPathAndParams("Login");
-
-// const tempNavState = AppNavigator.router.getStateForAction(firstAction);
 
 const initialNavState = AppNavigator.router.getStateForAction(firstAction);
 

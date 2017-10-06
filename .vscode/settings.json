@@ -2,5 +2,8 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "javascript.format.enable": false,
-  "prettier.eslintIntegration": true
+  "javascript.validate.enable": false,
+  "prettier.eslintIntegration": true,
+  "flow.useNPMPackagedFlow": true,
+  "flow.showStatus": true
 }

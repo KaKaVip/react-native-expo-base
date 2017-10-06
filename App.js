@@ -1,10 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Provider } from "react-redux";
-import { AppLoading, Asset, Font, Util } from "expo";
+import { AppLoading, Asset, Font, Constants } from "expo";
 
 import store from "./store/ConfigureStore";
-import AppWithNavigationState from "./navigation/AppNavigator";
+import ReduxNavigation from "./navigation/AppNavigator";
 import I18n from "./i18n/I18n";
 
 function cacheImages(images) {
@@ -34,10 +34,20 @@ class App extends React.Component {
     await Promise.all([...imageAssets, ...fontAssets]);
 
     await I18n.initAsync();
-    console.log(" device Locale " + I18n.locale);
+    console.log(" Device Locale " + I18n.locale);
+    console.log(" Linking Uri " + Constants.linkingUri);
   }
 
+  _prefix = () => {
+    if (Constants.appOwnership === "standalone") {
+      return Platform.OS == "android" ? "demoapp://demoapp/" : "demoapp://";
+    } else {
+      return Constants.linkingUri;
+    }
+  };
+
   render() {
+    console.log(" Deep Linking " + this._prefix());
     if (!this.state.isReady) {
       return (
         <AppLoading
@@ -49,7 +59,7 @@ class App extends React.Component {
     }
     return (
       <Provider store={store}>
-        <AppWithNavigationState />
+        <ReduxNavigation uriPrefix={this._prefix()} />
       </Provider>
     );
   }

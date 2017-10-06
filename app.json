@@ -15,6 +15,7 @@
     "packagerOpts": {
       "assetExts": ["ttf", "mp4"]
     },
+    "scheme": "demoapp", // demoapp://
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.haipq.react.native.demo",
